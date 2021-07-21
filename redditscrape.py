@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 
 class RedditScrape:
+
     def __init__(self):
         self.post = {
             'title': [],
@@ -21,8 +22,8 @@ class RedditScrape:
         }
 
         self.daily_comments = {
-            'top_comments': [],
-            'karma': [],
+            'Top Comments': [],
+            'Karma': [],
             'coins_mentioned': [],
             'sentiment': []
         }
@@ -51,7 +52,7 @@ class RedditScrape:
 
         return clean_comment
 
-    def find_coins(self, text, crypto_data, coins_code, coins_name):
+    def find_coins(self, text, coins_code, coins_name):
         accept = self.crypto_data['coin_code'] + self.crypto_data['coin']
 
         coins = [coin for coin in accept if coin.upper() in text.upper()]
@@ -68,7 +69,7 @@ class RedditScrape:
         else:
             return np.nan
 
-    def sentiment_analysis(self, comment, sentiment, comment_sentiment, threshold):
+    def sentiment_analysis(self, sentiment, comment_sentiment, threshold):
         if sentiment['compound'] > threshold:
             comment_sentiment['Positive'] += 1
             return 'Positive'
@@ -81,8 +82,6 @@ class RedditScrape:
             comment_sentiment['Neutral'] += 1
             return 'Neutral'
 
-        return sentiment
-
     def get_market_data(self):
         print("Reading Market Data...")
 
@@ -91,9 +90,9 @@ class RedditScrape:
         soup = BeautifulSoup(web_content.content, "lxml")
         json_data = json.loads(soup.select("[type='application/json']")[0].getText())
 
-        lenCrypto = len(json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'])
+        len_crypto = len(json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'])
 
-        for i in range(lenCrypto):
+        for i in range(len_crypto):
             coin_name = json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['name']
             self.crypto_data['coin'].append(coin_name.upper())
             self.crypto_data['coin_code'].append(
@@ -125,8 +124,8 @@ class RedditScrape:
         }
 
         self.daily_comments = {
-            'top_comments': [],
-            'karma': [],
+            'Top Comments': [],
+            'Karma': [],
             'coins_mentioned': [],
             'sentiment': []
         }
@@ -157,19 +156,42 @@ class RedditScrape:
         coins_code = {row['coin_code']: row['coin'] for index, row in self.crypto_df.iterrows()}
         coins_name = {row['coin']: row['coin'] for index, row in self.crypto_df.iterrows()}
 
-        submission.comments.replace_more(limit=10)
+        submission.comments.replace_more(limit=1)
         for top_level_comment in submission.comments[1:]:
             comment = top_level_comment.body
             comment = self.remove_gif_url(comment)
             sentiment = sia.polarity_scores(comment)
 
-            self.daily_comments['top_comments'].append(comment)
+            self.daily_comments['Top Comments'].append(comment)
             self.daily_comments['sentiment'].append(
-                self.sentiment_analysis(comment, sentiment, self.comments_sentiment, 0.03))
-            self.daily_comments['karma'].append(top_level_comment.score)
+                self.sentiment_analysis(sentiment, self.comments_sentiment, 0.03))
+            self.daily_comments['Karma'].append(top_level_comment.score)
             self.daily_comments['coins_mentioned'].append(
-                self.find_coins(comment, self.crypto_df, coins_code, coins_name))
+                self.find_coins(comment, coins_code, coins_name))
 
         self.comments_df = pd.DataFrame(self.daily_comments)
 
         return f"Collected {len(self.comments_df)} comments."
+
+    def count_coins_mentioned(self):
+
+        coins_count = {coin: 0 for coin in self.crypto_df['coin']}
+
+        for index, row in self.comments_df.iterrows():
+            if not pd.isna(row['coins_mentioned']):
+                coins = row['coins_mentioned'].split(", ")
+                for coin in coins:
+                    coins_count[coin] += 1
+
+        final_coins_count = {coin: value for coin, value in
+                             sorted(coins_count.items(), key=lambda item: item[1], reverse=True) if value != 0}
+
+        coin_data = pd.DataFrame()
+
+        for coin in list(final_coins_count.keys()):
+            coin_data = pd.concat([coin_data, self.crypto_df[self.crypto_df['coin'] == coin]])
+
+        coin_data['mention_counts'] = coin_data['coin'].map(final_coins_count)
+
+        return coin_data
+
