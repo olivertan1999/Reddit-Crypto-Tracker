@@ -157,7 +157,7 @@ class RedditScrape:
         coins_code = {row['coin_code']: row['coin'] for index, row in self.crypto_df.iterrows()}
         coins_name = {row['coin']: row['coin'] for index, row in self.crypto_df.iterrows()}
 
-        submission.comments.replace_more(limit=1)
+        submission.comments.replace_more(limit=10)
         for top_level_comment in submission.comments[1:]:
             comment = top_level_comment.body
             comment = self.remove_gif_url(comment)
