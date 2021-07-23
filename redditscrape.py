@@ -54,8 +54,8 @@ class RedditScrape:
 
     def find_coins(self, text, coins_code, coins_name):
         accept = self.crypto_data['coin_code'] + self.crypto_data['coin']
-
-        coins = [coin for coin in accept if coin.upper() in text.upper()]
+        text = re.split('\W+', text.upper())
+        coins = [coin for coin in accept if coin.upper() in text]
 
         coins_mentioned = []
         for coin in coins:
@@ -156,7 +156,7 @@ class RedditScrape:
         coins_code = {row['coin_code']: row['coin'] for index, row in self.crypto_df.iterrows()}
         coins_name = {row['coin']: row['coin'] for index, row in self.crypto_df.iterrows()}
 
-        submission.comments.replace_more(limit=1)
+        submission.comments.replace_more(limit=20)
         for top_level_comment in submission.comments[1:]:
             comment = top_level_comment.body
             comment = self.remove_gif_url(comment)
@@ -194,4 +194,3 @@ class RedditScrape:
         coin_data['mention_counts'] = coin_data['coin'].map(final_coins_count)
 
         return coin_data
-
