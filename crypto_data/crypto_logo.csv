@@ -1,0 +1,101 @@
+,coin,coin_img,coin_code
+0,BITCOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/1.png,BTC
+1,ETHEREUM,https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png,ETH
+2,TETHER,https://s2.coinmarketcap.com/static/img/coins/64x64/825.png,USDT
+3,BINANCE COIN,https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png,BNB
+4,CARDANO,https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png,ADA
+5,DOGECOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/74.png,DOGE
+6,XRP,https://s2.coinmarketcap.com/static/img/coins/64x64/52.png,XRP
+7,USD COIN,https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png,USDC
+8,POLKADOT,https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png,DOT
+9,UNISWAP,https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png,UNI
+10,BITCOIN CASH,https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png,BCH
+11,LITECOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/2.png,LTC
+12,SOLANA,https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png,SOL
+13,CHAINLINK,https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png,LINK
+14,POLYGON,https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png,MATIC
+15,BINANCE USD,https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png,BUSD
+16,THETA,https://s2.coinmarketcap.com/static/img/coins/64x64/2416.png,THETA
+17,STELLAR,https://s2.coinmarketcap.com/static/img/coins/64x64/512.png,XLM
+18,WRAPPED BITCOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png,WBTC
+19,INTERNET COMPUTER,https://s2.coinmarketcap.com/static/img/coins/64x64/8916.png,ICP
+20,VECHAIN,https://s2.coinmarketcap.com/static/img/coins/64x64/3077.png,VET
+21,ETHEREUM CLASSIC,https://s2.coinmarketcap.com/static/img/coins/64x64/1321.png,ETC
+22,FILECOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/2280.png,FIL
+23,DAI,,DAI
+24,TRON,https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png,TRX
+25,MONERO,https://s2.coinmarketcap.com/static/img/coins/64x64/328.png,XMR
+26,EOS,https://s2.coinmarketcap.com/static/img/coins/64x64/1765.png,EOS
+27,AMP,https://s2.coinmarketcap.com/static/img/coins/64x64/6945.png,AMP
+28,AAVE,https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png,AAVE
+29,NEO,https://s2.coinmarketcap.com/static/img/coins/64x64/1376.png,NEO
+30,SHIBA INU,https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png,SHIB
+31,ALGORAND,https://s2.coinmarketcap.com/static/img/coins/64x64/4030.png,ALGO
+32,BITCOIN SV,https://s2.coinmarketcap.com/static/img/coins/64x64/3602.png,BSV
+33,FTX TOKEN,https://s2.coinmarketcap.com/static/img/coins/64x64/4195.png,FTT
+34,KUSAMA,https://s2.coinmarketcap.com/static/img/coins/64x64/5034.png,KSM
+35,IOTA,https://s2.coinmarketcap.com/static/img/coins/64x64/1720.png,MIOTA
+36,MAKER,https://s2.coinmarketcap.com/static/img/coins/64x64/1518.png,MKR
+37,CRYPTO.COM COIN,,CRO
+38,PANCAKESWAP,https://s2.coinmarketcap.com/static/img/coins/64x64/7186.png,CAKE
+39,BITCOIN BEP2,https://s2.coinmarketcap.com/static/img/coins/64x64/4023.png,BTCB
+40,KLAYTN,https://s2.coinmarketcap.com/static/img/coins/64x64/4256.png,KLAY
+41,TEZOS,https://s2.coinmarketcap.com/static/img/coins/64x64/2011.png,XTZ
+42,COSMOS,https://s2.coinmarketcap.com/static/img/coins/64x64/3794.png,ATOM
+43,TERRA,https://s2.coinmarketcap.com/static/img/coins/64x64/4172.png,LUNA
+44,THETA FUEL,https://s2.coinmarketcap.com/static/img/coins/64x64/3822.png,TFUEL
+45,AVALANCHE,https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png,AVAX
+46,UNUS SED LEO,https://s2.coinmarketcap.com/static/img/coins/64x64/3957.png,LEO
+47,HUOBI TOKEN,https://s2.coinmarketcap.com/static/img/coins/64x64/2502.png,HT
+48,BITTORRENT,https://s2.coinmarketcap.com/static/img/coins/64x64/3718.png,BTT
+49,THORCHAIN,https://s2.coinmarketcap.com/static/img/coins/64x64/4157.png,RUNE
+50,CHILIZ,https://s2.coinmarketcap.com/static/img/coins/64x64/4066.png,CHZ
+51,TERRAUSD,https://s2.coinmarketcap.com/static/img/coins/64x64/7129.png,UST
+52,DECRED,https://s2.coinmarketcap.com/static/img/coins/64x64/1168.png,DCR
+53,DASH,https://s2.coinmarketcap.com/static/img/coins/64x64/131.png,DASH
+54,WAVES,https://s2.coinmarketcap.com/static/img/coins/64x64/1274.png,WAVES
+55,HEDERA HASHGRAPH,https://s2.coinmarketcap.com/static/img/coins/64x64/4642.png,HBAR
+56,TELCOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/2394.png,TEL
+57,COMPOUND,https://s2.coinmarketcap.com/static/img/coins/64x64/5692.png,COMP
+58,ZCASH,https://s2.coinmarketcap.com/static/img/coins/64x64/1437.png,ZEC
+59,CELSIUS,https://s2.coinmarketcap.com/static/img/coins/64x64/2700.png,CEL
+60,ELROND,https://s2.coinmarketcap.com/static/img/coins/64x64/6892.png,EGLD
+61,NEM,https://s2.coinmarketcap.com/static/img/coins/64x64/873.png,XEM
+62,TRUEUSD,https://s2.coinmarketcap.com/static/img/coins/64x64/2563.png,TUSD
+63,YEARN.FINANCE,,YFI
+64,HOLO,https://s2.coinmarketcap.com/static/img/coins/64x64/2682.png,HOT
+65,NEAR PROTOCOL,https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png,NEAR
+66,ZILLIQA,https://s2.coinmarketcap.com/static/img/coins/64x64/2469.png,ZIL
+67,ENJIN COIN,https://s2.coinmarketcap.com/static/img/coins/64x64/2130.png,ENJ
+68,HELIUM,https://s2.coinmarketcap.com/static/img/coins/64x64/5665.png,HNT
+69,DECENTRALAND,https://s2.coinmarketcap.com/static/img/coins/64x64/1966.png,MANA
+70,SUSHISWAP,https://s2.coinmarketcap.com/static/img/coins/64x64/6758.png,SUSHI
+71,SYNTHETIX,,SNX
+72,STACKS,https://s2.coinmarketcap.com/static/img/coins/64x64/4847.png,STX
+73,BASIC ATTENTION TOKEN,https://s2.coinmarketcap.com/static/img/coins/64x64/1697.png,BAT
+74,NEXO,https://s2.coinmarketcap.com/static/img/coins/64x64/2694.png,NEXO
+75,BITCOIN GOLD,https://s2.coinmarketcap.com/static/img/coins/64x64/2083.png,BTG
+76,REVAIN,https://s2.coinmarketcap.com/static/img/coins/64x64/2135.png,REV
+77,HORIZEN,https://s2.coinmarketcap.com/static/img/coins/64x64/1698.png,ZEN
+78,PAXOS STANDARD,https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png,PAX
+79,MDEX,https://s2.coinmarketcap.com/static/img/coins/64x64/8335.png,MDX
+80,THE GRAPH,https://s2.coinmarketcap.com/static/img/coins/64x64/6719.png,GRT
+81,QTUM,https://s2.coinmarketcap.com/static/img/coins/64x64/1684.png,QTUM
+82,QUANT,https://s2.coinmarketcap.com/static/img/coins/64x64/3155.png,QNT
+83,BANCOR,https://s2.coinmarketcap.com/static/img/coins/64x64/1727.png,BNT
+84,HARMONY,https://s2.coinmarketcap.com/static/img/coins/64x64/3945.png,ONE
+85,NANO,https://s2.coinmarketcap.com/static/img/coins/64x64/1567.png,NANO
+86,OKB,https://s2.coinmarketcap.com/static/img/coins/64x64/3897.png,OKB
+87,DIGIBYTE,https://s2.coinmarketcap.com/static/img/coins/64x64/109.png,DGB
+88,ONTOLOGY,https://s2.coinmarketcap.com/static/img/coins/64x64/2566.png,ONT
+89,BAKERYTOKEN,https://s2.coinmarketcap.com/static/img/coins/64x64/7064.png,BAKE
+90,UMA,https://s2.coinmarketcap.com/static/img/coins/64x64/5617.png,UMA
+91,CURVE DAO TOKEN,https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png,CRV
+92,0X,https://s2.coinmarketcap.com/static/img/coins/64x64/1896.png,ZRX
+93,SIACOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/1042.png,SC
+94,OMG NETWORK,,OMG
+95,KUCOIN TOKEN,https://s2.coinmarketcap.com/static/img/coins/64x64/2087.png,KCS
+96,HUSD,https://s2.coinmarketcap.com/static/img/coins/64x64/4779.png,HUSD
+97,FANTOM,https://s2.coinmarketcap.com/static/img/coins/64x64/3513.png,FTM
+98,SWISSBORG,https://s2.coinmarketcap.com/static/img/coins/64x64/2499.png,CHSB
+99,RAVENCOIN,https://s2.coinmarketcap.com/static/img/coins/64x64/2577.png,RVN
