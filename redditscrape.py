@@ -54,7 +54,7 @@ class RedditScrape:
 
     def find_coins(self, text, coins_code, coins_name):
         accept = self.crypto_data['coin_code'] + self.crypto_data['coin']
-        text = re.split('\W+', text.upper())
+        text = re.split(r'\W+', text.upper())
         coins = [coin for coin in accept if coin.upper() in text]
 
         coins_mentioned = []
