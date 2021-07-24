@@ -1,6 +1,6 @@
 # Reddit Crypto Tracker
 
-<p><img align="right" src="https://praw.readthedocs.io/en/stable/" width="500" height="320" /></p>
+<p><img align="center" src="https://github.com/olivertan1999/Reddit-Crypto-Tracker/blob/main/media/header.gif" width="500" height="150" /></p>
 
 # Introduction
 With 3.3 mil members (as of now), [r/CryptoCurrency](https://coinmarketcap.com/all/views/all/) has certainly garnered the interest of many retail investors and crypto enthusiasts. As such, this is the perfect platform to gauge the sentiment of retail investors in the market as well as to get a first hand information on what's the next up and coming coin.
