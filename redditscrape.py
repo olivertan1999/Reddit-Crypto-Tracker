@@ -47,18 +47,17 @@ class RedditScrape:
         }
 
         self.crypto_data = {
-            'coin': [],
-            'coin_code': [],
-            'price_in_usd': [],
-            'percent_change_1h': [],
-            'percent_change_24h': [],
-            'percent_change_7d': []
+            'Coin': [],
+            'Coin Code': [],
+            'Price in USD ($)': [],
+            '1h Change (%)': [],
+            '24h Change (%)': [],
+            '7d Change (%)': []
         }
 
         self.crypto_df = None
         self.comments_df = None
 
-        
     def remove_gif_url(self, comment):
 
         """ Function to remove gif from comment.
@@ -73,7 +72,6 @@ class RedditScrape:
 
         return clean_comment
 
-    
     def find_coins(self, text, coins_code, coins_name):
 
         """ Function to find and extract cryptos name or symbol from the comment text.
@@ -87,7 +85,7 @@ class RedditScrape:
         """
 
         # list of strings to be searched and matched as coin (eg. BITCOIN, BTC, ...)
-        accept = self.crypto_data['coin_code'] + self.crypto_data['coin']
+        accept = self.crypto_data['Coin Code'] + self.crypto_data['Coin']
         # Remove 'ONE' from the accept list as it is an extremely common word
         accept.remove('ONE')
 
@@ -107,7 +105,6 @@ class RedditScrape:
         else:
             return np.nan
 
-        
     def sentiment_analysis(self, sentiment, threshold):
 
         """ Function to assign comment's sentiment based on their VADER compound score.
@@ -131,7 +128,6 @@ class RedditScrape:
             self.comments_sentiment['Neutral'] += 1
             return 'Neutral'
 
-        
     def get_market_data(self):
 
         """ Function to scrape cryptos data from coinmarketcap.com.
@@ -156,25 +152,25 @@ class RedditScrape:
         # Extract cryptos infos from the json data
         for i in range(len_crypto):
             coin_name = json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['name']
-            self.crypto_data['coin'].append(coin_name.upper())
-            self.crypto_data['coin_code'].append(
+            self.crypto_data['Coin'].append(coin_name.upper())
+            self.crypto_data['Coin Code'].append(
                 json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['symbol'].upper())
-            self.crypto_data['price_in_usd'].append(
-                round(json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['quotes'][0]['price'],
+            self.crypto_data['Price in USD ($)'].append(
+                round(json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['quotes'][0][
+                          'price'],
                       2))
-            self.crypto_data['percent_change_1h'].append(round(
+            self.crypto_data['1h Change (%)'].append(round(
                 json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['quotes'][0][
                     'percentChange1h'], 2))
-            self.crypto_data['percent_change_24h'].append(round(
+            self.crypto_data['24h Change (%)'].append(round(
                 json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['quotes'][0][
                     'percentChange24h'], 2))
-            self.crypto_data['percent_change_7d'].append(round(
+            self.crypto_data['7d Change (%)'].append(round(
                 json_data['props']['initialState']['cryptocurrency']['listingLatest']['data'][i]['quotes'][0][
                     'percentChange7d'], 2))
 
         self.crypto_df = pd.DataFrame(self.crypto_data)
 
-        
     def reset_data(self):
 
         """ Function to reset the crypto_data and daily_comments attributes in the RedditScrape class.
@@ -186,12 +182,12 @@ class RedditScrape:
         """
 
         self.crypto_data = {
-            'coin': [],
-            'coin_code': [],
-            'price_in_usd': [],
-            'percent_change_1h': [],
-            'percent_change_24h': [],
-            'percent_change_7d': []
+            'Coin': [],
+            'Coin Code': [],
+            'Price in USD ($)': [],
+            '1h Change (%)': [],
+            '24h Change (%)': [],
+            '7d Change (%)': []
         }
 
         self.daily_comments = {
@@ -235,13 +231,13 @@ class RedditScrape:
         self.reset_data()
         self.get_market_data()
 
-        coins_code = {row['coin_code']: row['coin'] for index, row in self.crypto_df.iterrows()}
-        coins_name = {row['coin']: row['coin'] for index, row in self.crypto_df.iterrows()}
+        coins_code = {row['Coin Code']: row['Coin'] for index, row in self.crypto_df.iterrows()}
+        coins_name = {row['Coin']: row['Coin'] for index, row in self.crypto_df.iterrows()}
 
         # Extract and process each comments in the post
         # Change the limit (1-20) to adjust the number of comments to be collected
         # This will drastically affect the runtime as well
-        submission.comments.replace_more(limit=10)
+        submission.comments.replace_more(limit=20)
 
         # Skip the first mod comment
         for top_level_comment in submission.comments[1:]:
@@ -249,6 +245,7 @@ class RedditScrape:
             comment = self.remove_gif_url(comment)
             sentiment = sia.polarity_scores(comment)
 
+            # Discard comments where no coin is mentioned
             if pd.isna(self.find_coins(comment, coins_code, coins_name)):
                 continue
 
@@ -263,7 +260,6 @@ class RedditScrape:
 
         print(f"Collected {len(self.comments_df)} comments.")
 
-        
     def count_coins_mentioned(self):
 
         """ Function to count the number of times a crypto is mentioned from the collected comments.
@@ -274,7 +270,7 @@ class RedditScrape:
                 Dataframe: table detailing the cryptos info of the most to least mentioned coins
         """
 
-        coins_count = {coin: 0 for coin in self.crypto_df['coin']}
+        coins_count = {coin: 0 for coin in self.crypto_df['Coin']}
 
         for index, row in self.comments_df.iterrows():
             if not pd.isna(row['coins_mentioned']):
@@ -288,9 +284,8 @@ class RedditScrape:
         # Rearrange crypto_df based on mention counts
         coin_data = pd.DataFrame()
         for coin in list(final_coins_count.keys()):
-            coin_data = pd.concat([coin_data, self.crypto_df[self.crypto_df['coin'] == coin]])
+            coin_data = pd.concat([coin_data, self.crypto_df[self.crypto_df['Coin'] == coin]])
 
-        coin_data['mention_counts'] = coin_data['coin'].map(final_coins_count)
+        coin_data['Mention Counts'] = coin_data['Coin'].map(final_coins_count)
 
         return coin_data
-
