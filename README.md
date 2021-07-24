@@ -9,4 +9,4 @@ The aim of this project is to create a **web-based dashboard** that showcases th
 
 # Demo
 
-<p><img align="center" src="https://github.com/olivertan1999/Reddit-Crypto-Tracker/blob/main/media/demo.gif" width="100%" height="100%" /></p>
+
