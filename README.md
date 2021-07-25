@@ -16,7 +16,7 @@ The aim of this project is to create a **web-based dashboard** that showcases th
 ## General Idea and Assumption
 The primary idea behind this project is to get to know what coins are reddit retail investors interested in currently and understand why the coins are so popular through their price changes and history.
 
-In forum as casual as Reddit, there are bound to be irrelevant comments that should be filtered out from our analysis. To extract only the relevant comments, I assumed that ***atleast one cryptocurrency (either symbol or fullname) is mentioned in the comment.***
+In forum as casual as Reddit, there are bound to be irrelevant comments that should be filtered out from our analysis. To extract only the relevant comments, I assumed that ***atleast one cryptocurrency (either coin code or full name) is mentioned in the comment.***
 
 
 ## Preview
@@ -26,7 +26,7 @@ Click [here]() for the full demonstration of the web-app.
 
 ## Setup
 1. Open up your terminal or command prompt and cd to the directory containing the reddit-crypto-tracker files.
-2. Run the following command to install all required python packages (****):
+2. Run the following command to install all required python packages (**May take a while to install**):
     ```
     pip install -r requirements.txt
     ```
@@ -34,7 +34,10 @@ Click [here]() for the full demonstration of the web-app.
     ```
     python app.py
     ```
-4. Wait for the script to run. (initial run may take a while depending on comments limit that you set in redditscrape.py)
-5. Click on the link to access the webapp on browser.
+4. Wait for the script to run. (initial run may take a while (**up to 5 minutes**) depending on comments limit that you set in [redditscrape.py](https://github.com/olivertan1999/Reddit-Crypto-Tracker/blob/main/redditscrape.py))
+5. Copy the link to access the webapp on browser.
 
 ## Issues and Limitations
+1. Webapp might fail to run at **GMT+0 (around 10am AEST)** because that's the time when the Daily Discussion post resets, thus there wont be enough comments to analyse. The webapp will run optimally at night when there are thousands of comments and therefore larger sample size to accurately reflect the subreddit's sentiments.
+2. Since there are crypto coins with common words as code name, (eg. HARMONY with ONE as its code name) this may sway the result of the analysis. As of now, 'ONE' has been removed from the search list to avoid this issue. However, there may be similar coins in the future.
+3. Extracting comments via reddit's API may take a long time depending on the comments limit that you set in [redditscrape.py](https://github.com/olivertan1999/Reddit-Crypto-Tracker/blob/main/redditscrape.py)) (**up to 5 minutes especially at night time with limit set to 20**)
