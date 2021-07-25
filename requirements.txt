@@ -12,3 +12,4 @@ dash_extensions==0.0.55
 dash_core_components==1.16.0
 pandas==1.3.0
 beautifulsoup4==4.9.3
+html5lib==1.1
