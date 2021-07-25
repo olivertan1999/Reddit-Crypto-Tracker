@@ -227,7 +227,7 @@ app.layout = html.Div([
                 dbc.Card([
                     dbc.CardBody([
                         html.H1(id='title',
-                                children=f"r/CryptoCurrency Daily Discussion - {curr_datetime.strftime('%B %-d, %Y')}"),
+                                children=f"r/CryptoCurrency Daily Discussion - {curr_datetime.strftime('%B %d, %Y')}"),
                         html.H6("Reddit Retail Investors - What Are They Up To Today?")
                     ], style={'textAlign': 'left'}, className='mt-2 ml-n5 mb-n2')
                 ], style={'border': 'none'})
@@ -976,7 +976,7 @@ def update_piechart(n_intervals):
 def update_title(n):
     """ Update the header and footer upon callback. """
 
-    return f"r/CryptoCurrency Daily Discussion - {datetime.datetime.now().strftime('%B %-d, %Y')}",\
+    return f"r/CryptoCurrency Daily Discussion - {datetime.datetime.now().strftime('%B %d, %Y')}",\
            f"Last Updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
 
