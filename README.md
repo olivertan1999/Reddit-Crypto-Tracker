@@ -37,4 +37,4 @@ Click [here]() for the full demonstration of the web-app.
 4. Wait for the script to run. (initial run may take a while depending on comments limit that you set in redditscrape.py)
 5. Click on the link to access the webapp on browser.
 
-## Known Issues and Limitationsp
+## Issues and Limitations
