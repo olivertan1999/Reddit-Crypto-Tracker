@@ -144,7 +144,7 @@ class RedditScrape:
 
         start_urls = 'https://coinmarketcap.com/all/views/all/'
         web_content = requests.get(start_urls)
-        soup = BeautifulSoup(web_content.content, "lxml")
+        soup = BeautifulSoup(web_content.content, "html5lib")
 
         # Load the json data from the web html
         json_data = json.loads(soup.select("[type='application/json']")[0].getText())
