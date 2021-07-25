@@ -26,7 +26,7 @@ Click [here]() for the full demonstration of the web-app.
 
 ## Setup
 1. Open up your terminal or command prompt and cd to the directory containing the reddit-crypto-tracker files.
-2. Run the following command to install all required python packages:
+2. Run the following command to install all required python packages (****):
     ```
     pip install -r requirements.txt
     ```
