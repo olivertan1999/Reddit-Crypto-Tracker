@@ -22,7 +22,7 @@ In forum as casual as Reddit, there are bound to be irrelevant comments that sho
 ## Preview
 ![demo](https://user-images.githubusercontent.com/61670049/126874984-b58b3aff-c429-471b-a3e9-ffc810da7273.gif)
 
-Click [here](https://user-images.githubusercontent.com/61670049/126901716-fe7347ee-f435-448d-8a47-00c44e780dec.mp4) for the full demonstration of the web-app.
+Click [here](https://user-images.githubusercontent.com/61670049/126901716-fe7347ee-f435-448d-8a47-00c44e780dec.mp4) for the full video demonstration of the web-app.
 
 ## Setup
 1. Open up your terminal or command prompt and cd to the directory containing the reddit-crypto-tracker .py files.
