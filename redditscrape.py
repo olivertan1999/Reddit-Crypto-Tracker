@@ -2,6 +2,8 @@ import praw
 import pandas as pd
 import numpy as np
 import re
+import nltk
+nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import requests
 import json
