@@ -19,7 +19,7 @@ The primary idea behind this project is to get to know what coins are reddit ret
 In forum as casual as Reddit, there are bound to be irrelevant comments that should be filtered out from our analysis. To extract only the relevant comments, I assumed that ***atleast one cryptocurrency (either coin code or full name) must be mentioned in the comment.***
 
 
-## Preview
+## Demo
 ![demo](https://user-images.githubusercontent.com/61670049/126874984-b58b3aff-c429-471b-a3e9-ffc810da7273.gif)
 
 Click [here](https://user-images.githubusercontent.com/61670049/126901716-fe7347ee-f435-448d-8a47-00c44e780dec.mp4) for the full video demonstration of the web-app.
